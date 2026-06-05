@@ -3,37 +3,52 @@ function tossCoin(){
     let coin = document.getElementById("coin");
     let sound = document.getElementById("coinSound");
 
-    // 🎵 sound play
+    // 🎵 sound
     sound.currentTime = 0;
     sound.play();
 
     let flips = 0;
 
-    // 🔥 spin animation
+    // 🚀 fast spin animation
     let interval = setInterval(() => {
 
         coin.style.transform = `
-            scale(1.5) 
-            rotateY(${flips * 180}deg) 
-            rotateZ(${flips * 20}deg)
+            translateY(${-flips * 5}px)
+            scale(1.5)
+            rotateY(${flips * 180}deg)
+            rotateZ(${flips * 15}deg)
         `;
 
-        coin.innerHTML = "HEAD";
+        coin.innerHTML = (flips % 2 === 0) ? "HEAD" : "TAIL";
 
         flips++;
 
-    }, 100);
+    }, 80);
 
     setTimeout(() => {
 
         clearInterval(interval);
 
-        // final state
-        coin.innerHTML = "HEAD";
+        let result = Math.random() < 0.5 ? "HEAD" : "TAIL";
 
-        coin.style.transform = "scale(1) rotateY(0deg) rotateZ(0deg)";
-        coin.style.background = "green";
-        coin.style.color = "white";
+        coin.innerHTML = result;
 
-    }, 2000);
+        // 🪙 landing bounce effect
+        coin.style.transition = "0.4s ease";
+        coin.style.transform = "scale(1.2)";
+
+        setTimeout(() => {
+            coin.style.transform = "scale(1)";
+        }, 200);
+
+        // 🎨 color
+        if(result === "HEAD"){
+            coin.style.background = "orange";
+            coin.style.color = "white";
+        }else{
+            coin.style.background = "red";
+            coin.style.color = "white";
+        }
+
+    }, 1200);
 }

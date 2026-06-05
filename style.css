@@ -2,7 +2,7 @@ body{
     text-align:center;
     font-family:Arial;
     margin-top:80px;
-    background:#f2f2f2;
+    background:white;
 }
 
 h1{
@@ -25,11 +25,11 @@ h1{
 }
 
 button{
-    padding:12px 25px;
+    padding:12px 30px;
     font-size:18px;
     cursor:pointer;
-    border:none;
-    background:#333;
-    color:white;
-    border-radius:8px;
+    border:palegreen;
+    background:#2b08aa;
+    color:rgb(247, 245, 245);
+    border-radius:15px;
 }
