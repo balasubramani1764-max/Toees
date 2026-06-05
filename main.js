@@ -1,3 +1,9 @@
+let coin = document.getElementById("coin");
+
+// 🪙 page load aagumbodhu coin look set
+coin.innerHTML = "HEAD                  TAIL";
+coin.style.background = "gold";
+coin.style.color = "black";
 function tossCoin(){
 
     let coin = document.getElementById("coin");
